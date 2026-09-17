@@ -12,4 +12,12 @@ export type UserMethods = {
   comparePasswords(incomingPassword: string): Promise<boolean>;
 };
 
-export interface UserModel extends Model<UserSchema>, UserMethods {}
+export interface UserStaticMethods {
+  findByEmail(this: UserModel, userEmail: string): Promise<UserDocument | null>;
+}
+
+export interface UserModel
+  extends Model<UserSchema, {}, UserMethods>, UserStaticMethods {}
+
+export type RegisterUserBody = UserSchema;
+export type LoginUserBody = Omit<UserSchema, "username">;

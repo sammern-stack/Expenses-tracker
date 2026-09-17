@@ -5,10 +5,18 @@ import type {
   UserSchema,
   UserModel,
   UserMethods,
+  UserStaticMethods,
 } from "../types/user.types.js";
 import bcrypt from "bcryptjs";
 
-const userSchema = new Schema<UserSchema, UserModel, UserMethods>(
+const userSchema = new Schema<
+  UserSchema,
+  UserModel,
+  UserMethods,
+  {},
+  {},
+  UserStaticMethods
+>(
   {
     username: {
       type: String,
@@ -44,6 +52,11 @@ userSchema.methods.comparePasswords = async function (
   incomingPassword: string,
 ) {
   return bcrypt.compare(incomingPassword, this.password);
+};
+
+userSchema.statics.findByEmail = function (userEmail) {
+  const query = this.findOne({ email: userEmail });
+  return query.exec();
 };
 
 const User = model<UserSchema, UserModel>("user", userSchema);
