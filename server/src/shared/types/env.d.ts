@@ -2,6 +2,7 @@ declare namespace NodeJS {
   interface ProcessEnv {
     PORT: number;
     NODE_ENV: "development" | "production" | "test";
+    CLIENT_URL: string;
     MONGODB_URI: string;
     ACCESS_TOKEN_SECRET: string;
     ACCESS_TOKEN_EXPIRY: Jwt.SignOptions["expiresIn"];
