@@ -1,4 +1,4 @@
-import * as authService from "@/features/services/auth.service.js";
+import * as authService from "@/features/auth/services/auth.service.js";
 import { asyncHandler } from "@/shared/utils/asyncHandler.js";
 import { UnauthorizedError } from "@/shared/utils/customErrors.js";
 import * as cookie from "@/shared/utils/cookie.js";
