@@ -1,5 +1,5 @@
-import User from "@/features/auth/models/User.js";
-import RefreshToken from "@/features/auth/models/RefreshToken.js";
+import User from "@/features/auth/models/User.model.js";
+import RefreshToken from "@/features/auth/models/RefreshToken.model.js";
 import * as jwt from "@/shared/utils/jwt.js";
 import {
   ConflictError,
