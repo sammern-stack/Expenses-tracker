@@ -1,0 +1,25 @@
+$fonts: (
+  "inter": "InterVarFont.woff2",
+  "bricolageGrotesque": "BricolageGrotesqueVarFont.woff2",
+);
+
+:root {
+  --neutral-900: #101010;
+  --neutral-800: #1f1f1f;
+  --neutral-700: #313131;
+  --neutral-600: #3c3b40;
+  --neutral-500: #676767;
+  --neutral-400: #898a8b;
+  --neutral-300: #b7b7b7;
+  --neutral-000: #ffffff;
+
+  --orange-800: #903014;
+  --orange-700: #b92b09;
+  --orange-500: #eb430e;
+  --orange-400: #ff5722;
+
+  --green-900: #1a3d2b;
+  --green-500: #4ade80;
+
+  --red-500: #ef4444;
+}
