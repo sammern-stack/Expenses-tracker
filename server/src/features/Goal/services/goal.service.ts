@@ -1,23 +1,18 @@
-import Goal from "./Goal.model.js";
+import Goal from "../models/Goal.model.js";
 import {
   BadRequestError,
   ConflictError,
   NotFoundError,
 } from "@/shared/utils/customErrors.js";
+import { GoalQueryOptions } from "@/config/mongoose.js";
 
-import type { QueryFilter, QueryOptions } from "mongoose";
+import type { QueryFilter } from "mongoose";
 import type {
   GoalsQuery,
   GoalSchema,
   CreateGoalBody,
   UpdateGoalBody,
-} from "./goal.types.js";
-
-// Helper
-const GoalQueryOptions: QueryOptions<GoalSchema> = {
-  returnDocument: "after",
-  runValidators: true,
-};
+} from "../types/goal.types.js";
 
 export const getGoalsByUserId = async (
   userId: string,
@@ -36,7 +31,7 @@ export const getGoalById = async (goalId: string) => {
   const goal = await Goal.findById(goalId);
   if (!goal) throw new NotFoundError(`goal with Id ${goalId}`);
   return goal;
-}
+};
 
 export const createGoal = async (userId: string, goal: CreateGoalBody) => {
   const goalExist = await Goal.findOne({ name: goal.name });
@@ -62,8 +57,6 @@ export const updateGoal = async (
 };
 
 export const updateGoalAmount = async (goalId: string, deposit: number) => {
-  if (deposit === 0) throw new BadRequestError("Deposit can't be 0");
-
   const goal = await Goal.findById(goalId);
   if (!goal) throw new NotFoundError(`goal with Id ${goalId}`);
 

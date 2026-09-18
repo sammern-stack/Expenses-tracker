@@ -1,11 +1,11 @@
-import * as goalService from "@/features/Goal/goal.service.js";
+import * as goalService from "@/features/Goal/services/goal.service.js";
 import { asyncHandler } from "@/shared/utils/asyncHandler.js";
 import type { Request, Response } from "express";
 import type {
   CreateGoalBody,
   GoalsQuery,
   UpdateGoalBody,
-} from "./goal.types.js";
+} from "../types/goal.types.js";
 
 export const getGoalsByUserId = asyncHandler(
   async (req: Request<{}, {}, {}, GoalsQuery>, res: Response) => {

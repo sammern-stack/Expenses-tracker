@@ -1,5 +1,5 @@
 import { Schema, model } from "mongoose";
-import type { GoalSchema } from "./goal.types.js";
+import type { GoalSchema } from "../types/goal.types.js";
 
 const goalSchema = new Schema<GoalSchema>(
   {
