@@ -35,7 +35,7 @@ export const loginUser = async ({ email, password }: LoginUserBody) => {
 };
 
 export const logoutUser = async (refreshToken: string) => {
-  await RefreshToken.findOne({ token: refreshToken });
+  await RefreshToken.deleteOne({ token: refreshToken });
 };
 
 export const refreshTokens = async (incomingRefreshToken: string) => {

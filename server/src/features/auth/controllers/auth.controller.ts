@@ -9,13 +9,13 @@ import type { RegisterUserBody, LoginUserBody } from "../types/user.types.js";
 export const registerUser = asyncHandler(
   async (req: Request<{}, {}, RegisterUserBody>, res: Response) => {
     const userData = await authService.registerUser(req.body);
-    const { accessToken, refreshToken, newUser } = userData;
+    const { accessToken, refreshToken, newUser: user } = userData;
 
     cookie.setRefreshTokenCookie(res, refreshToken);
     res.status(201).json({
       ok: true,
-      message: `User ${newUser.username} created successfully`,
-      data: { newUser, accessToken },
+      message: `User ${user.username} created successfully`,
+      data: { user, accessToken },
     });
   },
 );
