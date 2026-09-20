@@ -1,0 +1,24 @@
+.authForm {
+  gap: 32px;
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  &__title {
+    @include text-preset-2;
+    color: var(--neutral-000);
+  }
+
+  &__desc {
+    @include text-preset-5;
+    color: var(--neutral-300);
+  }
+
+  &__divider {
+    min-height: 1px;
+    background: var(--neutral-700);
+  }
+}

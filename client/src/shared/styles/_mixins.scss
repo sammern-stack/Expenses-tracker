@@ -3,3 +3,22 @@
   align-items: center;
   justify-content: center;
 }
+
+@mixin flex-gap($gap: 0, $direction: column) {
+  display: flex;
+  flex-direction: $direction;
+  gap: $gap;
+}
+
+@mixin text-preset-2 {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 120%;
+}
+
+@mixin text-preset-5 {
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 150%;
+  letter-spacing: -0.3px;
+}

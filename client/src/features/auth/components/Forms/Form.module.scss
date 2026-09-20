@@ -1,0 +1,69 @@
+.form {
+  @include flex-gap(20px);
+
+  &__field {
+    @include flex-gap(10px);
+
+    input {
+      background: var(--neutral-700);
+      border-radius: 8px;
+      border: 1px solid var(--neutral-500);
+      padding: 16px;
+
+      &:focus {
+        outline: 3px solid var(--orange-400);
+        outline-offset: 2px;
+      }
+    }
+
+    label {
+      @include text-preset-5;
+      color: var(--neutral-000);
+    }
+  }
+
+  &[data-form="login"] &__field[data-form-field="password"] {
+    gap: 12px;
+
+    > div {
+      @include flex-gap(10px);
+    }
+
+    > a {
+      align-self: flex-end;
+      text-align: right;
+      @include text-preset-5;
+      color: var(--neutral-300);
+    }
+  }
+
+  &__submit {
+    margin-top: 12px;
+    border-radius: 100vw;
+    background: var(--orange-400);
+    padding: 12px 20px;
+    @include text-preset-5;
+    color: var(--neutral-900);
+    font-weight: 600;
+
+    &:hover {
+      background: var(--orange-500);
+    }
+
+    &:focus {
+      outline: 2px solid var(--orange-500);
+      outline-offset: 2px;
+    }
+  }
+
+  &__bottomText {
+    text-align: center;
+    @include text-preset-5;
+    color: var(--neutral-300);
+
+    > a {
+      color: var(--neutral-000);
+      text-decoration: underline;
+    }
+  }
+}

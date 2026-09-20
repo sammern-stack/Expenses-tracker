@@ -1,0 +1,44 @@
+.quote {
+  height: 100%;
+  background: linear-gradient(to left, var(--orange-400), var(--orange-700));
+  border: 1px solid rgb(255 255 255 / 0.3);
+  border-radius: 16px;
+  overflow: hidden;
+
+  &__content {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 20px 40px;
+    position: relative;
+    color: var(--neutral-000);
+  }
+
+  &__text {
+    font-family: "bricolageGrotesque";
+    font-size: 64px;
+    font-weight: 600;
+    letter-spacing: -2px;
+  }
+
+  &__author {
+    position: absolute;
+    bottom: 20px;
+    left: 40px;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 120%;
+    letter-spacing: -0.3px;
+
+    &::before {
+      content: "— ";
+    }
+  }
+
+  &__starIcon {
+    scale: 3;
+    position: absolute;
+    bottom: 20px;
+    right: 40px;
+  }
+}
