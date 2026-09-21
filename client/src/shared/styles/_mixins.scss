@@ -31,6 +31,29 @@
   }
 }
 
+@mixin box-styles($type: primary) {
+  padding: 20px;
+  border-radius: 16px;
+
+  @if ($type == primary) {
+    background: linear-gradient(to left, var(--orange-400), var(--orange-700));
+    border: 1px solid rgb(255 255 255 / 0.3);
+  }
+
+  @if ($type == secondary) {
+    background: var(--neutral-800);
+    border: 1px solid var(--neutral-600);
+  }
+}
+
+@mixin text-preset-1 {
+  font-family: "bricolageGrotesque", sans-serif;
+  font-size: 64px;
+  font-weight: 600;
+  line-height: 120%;
+  letter-spacing: -2px;
+}
+
 @mixin text-preset-2 {
   font-size: 32px;
   font-weight: 700;
@@ -41,5 +64,12 @@
   font-size: 15px;
   font-weight: 500;
   line-height: 150%;
+  letter-spacing: -0.3px;
+}
+
+@mixin text-preset-6 {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 140%;
   letter-spacing: -0.3px;
 }
