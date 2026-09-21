@@ -17,8 +17,8 @@ export const getGoalsByUserId = asyncHandler(
       data: goals.filteredGoals,
       meta: {
         savings: goals.totalSavings,
-        active: goals.allGoals.filter((g) => !g.isCompleted),
-        completed: goals.allGoals.filter((g) => g.isCompleted),
+        active: goals.allGoals.filter((g) => !g.isCompleted).length,
+        completed: goals.allGoals.filter((g) => g.isCompleted).length,
       },
     });
   },
