@@ -1,17 +1,17 @@
-import { useNavigate } from "react-router";
+import { Link } from "react-router";
 import styles from "./Home.module.scss";
 import { logoutUserReq } from "@/features/auth/services/authApi";
+import { PageHeader } from "@/layout";
 
 const HomePage = () => {
-  const logout = async () => (await logoutUserReq(), navigate("/login"));
-  const navigate = useNavigate();
+  const logout = async () => await logoutUserReq();
 
   return (
     <div className={styles.home}>
-      <h1>Home Page</h1>
-      <button type="button" onClick={logout}>
+      <PageHeader />
+      <Link to="/login" onClick={logout}>
         logout
-      </button>
+      </Link>
     </div>
   );
 };

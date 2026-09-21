@@ -39,21 +39,7 @@
 
   &__submit {
     margin-top: 12px;
-    border-radius: 100vw;
-    background: var(--orange-400);
-    padding: 12px 20px;
-    @include text-preset-5;
-    color: var(--neutral-900);
-    font-weight: 600;
-
-    &:hover {
-      background: var(--orange-500);
-    }
-
-    &:focus {
-      outline: 2px solid var(--orange-500);
-      outline-offset: 2px;
-    }
+    @include button-styles;
   }
 
   &__bottomText {
