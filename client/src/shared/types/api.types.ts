@@ -4,6 +4,7 @@ export type SuccessResponse<T> = {
   ok: true;
   message: string;
   data: T;
+  meta?: Record<string, unknown>;
 };
 
 export type ErrorResponse = {

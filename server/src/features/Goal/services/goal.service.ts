@@ -23,8 +23,13 @@ export const getGoalsByUserId = async (
   const goalsQuery: QueryFilter<GoalSchema> = { userId, ...filter };
   const sort = { [sortBy]: order === "asc" ? 1 : -1 } as const;
 
-  const goals = await Goal.find(goalsQuery).sort(sort);
-  return goals;
+  const filteredGoals = await Goal.find(goalsQuery).sort(sort);
+  const allGoals = await Goal.find({ userId });
+  const totalSavings = allGoals
+    .map((g) => g.currentAmount)
+    .reduce((total, amount) => total + amount, 0);
+
+  return { filteredGoals, allGoals, totalSavings };
 };
 
 export const getGoalById = async (goalId: string) => {
