@@ -1,0 +1,39 @@
+.chart {
+  position: relative;
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.canvas {
+  flex: 1;
+  min-height: 0;
+}
+
+.labels {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  text-align: center;
+}
+
+.label {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+
+  span:first-child {
+    @include text-preset-6;
+    color: var(--neutral-300);
+
+    &::before {
+      content: "$";
+    }
+  }
+
+  span:last-child {
+    @include text-preset-5;
+    color: var(--neutral-000);
+  }
+}
