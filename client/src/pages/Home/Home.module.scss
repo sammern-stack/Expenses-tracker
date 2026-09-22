@@ -1,5 +1,8 @@
 .home {
   &__main {
     padding: 20px 80px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
   }
 }

@@ -1,5 +1,5 @@
 import styles from "./Home.module.scss";
-import { InfoPanel, PageHeader } from "@/layout";
+import { GoalsList, InfoPanel, PageHeader } from "@/layout";
 
 const HomePage = () => {
   return (
@@ -7,6 +7,7 @@ const HomePage = () => {
       <PageHeader />
       <main className={styles.home__main}>
         <InfoPanel />
+        <GoalsList />
       </main>
     </div>
   );

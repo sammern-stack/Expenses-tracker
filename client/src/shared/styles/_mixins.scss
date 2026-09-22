@@ -11,17 +11,37 @@
 }
 
 @mixin button-styles($type: primary) {
+  @include text-preset-5;
+  font-weight: 600;
+  border-radius: 100vw;
+  padding: 12px 20px;
+  transition: background all 0.2s ease;
+
   @if ($type == primary) {
-    @include text-preset-5;
-    font-weight: 600;
-    border-radius: 100vw;
     background: var(--orange-400);
-    padding: 12px 20px;
     color: var(--neutral-900);
-    transition: background all 0.2s ease;
 
     &:hover {
       background: var(--orange-500);
+    }
+
+    &:focus {
+      outline: 2px solid var(--orange-500);
+      outline-offset: 2px;
+    }
+  }
+
+  @if ($type == secondary) {
+    background: var(--neutral-800);
+    border: 1px solid var(--neutral-600);
+    color: var(--neutral-000);
+
+    &:disabled {
+      color: var(--neutral-400);
+    }
+
+    &:hover {
+      background: var(--neutral-700);
     }
 
     &:focus {

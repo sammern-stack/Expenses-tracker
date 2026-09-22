@@ -1,0 +1,38 @@
+.goalsList {
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__title {
+    @include text-preset-2;
+    color: var(--neutral-000);
+  }
+
+  &__filters {
+    display: flex;
+    gap: 16px;
+  }
+
+  &__dropdown {
+    position: relative;
+
+    button {
+      @include button-styles(secondary);
+      display: flex;
+      gap: 8px;
+    }
+
+    div {
+      position: absolute;
+      bottom: -40px;
+      right: 0;
+    }
+  }
+}
