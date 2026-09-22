@@ -1,0 +1,58 @@
+.goalsGrid {
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__title {
+    @include text-preset-2;
+    color: var(--neutral-000);
+  }
+
+  &__filters {
+    display: flex;
+    gap: 16px;
+  }
+
+  &__dropdown {
+    position: relative;
+
+    button {
+      @include button-styles(secondary);
+      display: flex;
+      gap: 8px;
+    }
+
+    div {
+      position: absolute;
+      bottom: -40px;
+      right: 0;
+    }
+  }
+
+  &__empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 40px 0;
+    border-radius: 16px;
+    border: 2px dashed var(--neutral-600);
+
+    h2 {
+      @include text-preset-2;
+      color: var(--neutral-000);
+    }
+
+    p {
+      @include text-preset-5;
+      color: var(--neutral-300);
+    }
+
+    button {
+      @include button-styles;
+      margin-top: 12px;
+    }
+  }
+}
