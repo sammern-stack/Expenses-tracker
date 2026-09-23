@@ -2,6 +2,7 @@ import { lazy, Suspense } from "react";
 import { Route, Routes } from "react-router";
 import { ProtectedRoute } from "@/pages/Auth/ProtectedRoutes";
 import { useAuthBootstrap } from "@/features/auth/hooks/useAuthBootstrap";
+import { Dialog } from "./shared/components";
 
 const LoadingPage = lazy(() => import("@/pages/Loading/Loading"));
 const NotFoundPage = lazy(() => import("@/pages/NotFound/NotFound"));
@@ -25,6 +26,7 @@ function App() {
           <Route path="*" element={<NotFoundPage />} />
         </Route>
       </Routes>
+      <Dialog />
     </Suspense>
   );
 }
