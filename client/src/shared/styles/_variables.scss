@@ -22,4 +22,11 @@ $fonts: (
   --green-500: #4ade80;
 
   --red-500: #ef4444;
+
+  // Gradients
+  --orange-gradient: linear-gradient(
+    to left,
+    var(--orange-400),
+    var(--orange-700)
+  );
 }

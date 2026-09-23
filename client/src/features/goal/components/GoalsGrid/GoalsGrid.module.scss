@@ -55,4 +55,123 @@
       margin-top: 12px;
     }
   }
+
+  &__list {
+    @include flex-gap(24px);
+  }
+
+  &__gridSection {
+    display: grid;
+    gap: 24px;
+
+    &--grid-1 {
+      grid-template-areas: "item1 item1 item1";
+    }
+
+    &--grid-2 {
+      grid-template-areas:
+        "item1 item1 item1"
+        "item2 item2 item2";
+    }
+
+    &--grid-3 {
+      grid-template-areas:
+        "item1 item1 item3"
+        "item2 item2 item3";
+    }
+
+    &--grid-4 {
+      grid-template-areas:
+        "item1 item1 item3"
+        "item4 item2 item3";
+    }
+
+    &--grid-3.goalsGrid__gridSection--reverse {
+      grid-template-areas:
+        "item3 item1 item1"
+        "item3 item2 item2";
+    }
+
+    &--grid-4.goalsGrid__gridSection--reverse {
+      grid-template-areas:
+        "item3 item1 item1"
+        "item3 item2 item4";
+    }
+  }
+
+  &__gridItem {
+    padding: 24px;
+    border-radius: 16px;
+    @include flex-gap(24px);
+    @include box-styles($type: secondary, $padding: 24px);
+  }
+
+  &__gridItem:nth-child(1) {
+    grid-area: item1;
+    @include box-styles($type: primary, $padding: 24px);
+  }
+
+  &__gridItem:nth-child(1) &__goalPercent {
+    color: var(--neutral-000);
+  }
+
+  &__gridItem:nth-child(1) &__progressBar {
+    background: var(--orange-800);
+  }
+
+  &__gridItem:nth-child(1) &__progressBarFill {
+    background: var(--neutral-000);
+  }
+
+  &__gridItem:nth-child(2) {
+    grid-area: item2;
+  }
+
+  &__gridItem:nth-child(3) {
+    grid-area: item3;
+  }
+
+  &__gridItem:nth-child(4) {
+    grid-area: item4;
+  }
+
+  &__goalName {
+    @include text-preset-4;
+    flex: 1;
+    color: var(--neutral-000);
+  }
+
+  &__goalProgress {
+    @include flex-gap(12px);
+  }
+
+  &__goalPercent {
+    @include text-preset-1;
+    color: var(--orange-400);
+  }
+
+  &__progressBar {
+    min-height: 12px;
+    border-radius: 100vw;
+    background: var(--neutral-700);
+  }
+
+  &__progressBarFill {
+    min-height: 12px;
+    border-radius: 100vw;
+    background: var(--orange-400);
+  }
+
+  &__goalFooter {
+    color: var(--neutral-000);
+    @include text-preset-6;
+
+    span:nth-child(2) {
+      color: var(--neutral-300);
+    }
+
+    span:nth-child(3) {
+      color: rgb(255 255 255 / 0.7);
+    }
+  }
 }

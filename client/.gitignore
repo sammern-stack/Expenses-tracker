@@ -45,6 +45,7 @@ npm-debug.log*
 
 # Testing
 /coverage
+tests
 
 # Production
 /build
