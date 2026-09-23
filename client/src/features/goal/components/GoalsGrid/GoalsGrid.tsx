@@ -28,7 +28,7 @@ export const GoalsGrid = () => {
           {groupedGoals?.map((goals, idx) => (
             <GoalsGridSection
               goals={goals}
-              position={idx % 2 === 0 ? "even" : "odd"}
+              position={(idx + 1) % 2 === 0 ? "even" : "odd"}
             />
           ))}
         </div>

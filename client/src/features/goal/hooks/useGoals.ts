@@ -8,7 +8,7 @@ import type {
 
 export const useGetGoalsByUserId = (userId: string, filters?: GoalsQuery) => {
   return useQuery({
-    queryKey: ["goals", filters, userId],
+    queryKey: ["goals", userId],
     queryFn: () => goalsApi.getGoalsByUserIdReq(filters),
   });
 };
@@ -23,12 +23,8 @@ export const useGetGoalById = (goalId: string) => {
 export const useCreateGoal = (userId: string) => {
   const queryClient = useQueryClient();
 
-  interface Props {
-    goal: CreateGoalBody;
-  }
-
   return useMutation({
-    mutationFn: ({ goal }: Props) => goalsApi.createGoalReq(goal),
+    mutationFn: (goal: CreateGoalBody) => goalsApi.createGoalReq(goal),
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["goals", userId] });
     },

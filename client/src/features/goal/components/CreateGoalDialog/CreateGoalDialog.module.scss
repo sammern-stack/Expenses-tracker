@@ -1,0 +1,37 @@
+.createGoalDialog {
+  @include flex-gap(24px);
+
+  &__divider {
+    min-height: 1px;
+    background: var(--neutral-700);
+  }
+
+  &__form {
+    @include flex-gap(20px);
+
+    button {
+      @include button-styles;
+    }
+  }
+
+  &__field {
+    @include flex-gap(10px);
+
+    input {
+      background: var(--neutral-700);
+      border-radius: 8px;
+      border: 1px solid var(--neutral-500);
+      padding: 16px;
+
+      &:focus {
+        outline: 3px solid var(--orange-400);
+        outline-offset: 2px;
+      }
+    }
+
+    label {
+      @include text-preset-5;
+      color: var(--neutral-000);
+    }
+  }
+}
