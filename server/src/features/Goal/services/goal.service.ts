@@ -18,7 +18,7 @@ export const getGoalsByUserId = async (
   userId: string,
   query: GoalsQuery = {},
 ) => {
-  const { filter = {}, sortBy = "createdAt", order = "desc" } = query;
+  const { filter = {}, sortBy = "createdAt", order = "asc" } = query;
 
   const goalsQuery: QueryFilter<GoalSchema> = { userId, ...filter };
   const sort = { [sortBy]: order === "asc" ? 1 : -1 } as const;
